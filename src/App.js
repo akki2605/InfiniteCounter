@@ -4,6 +4,7 @@ import "./styles.css";
 export default function App() {
   const [counter, setCounter] = useState(0);
   const [stopCounter, setStopCounter] = useState(null);
+
   const increment = () => {
     return setTimeout(() => setCounter((prev) => prev + 1), 1000);
   };
@@ -13,6 +14,7 @@ export default function App() {
     setStopCounter();
     increment();
   };
+
   useEffect(() => {
     clearTimeout(stopCounter);
     setStopCounter(increment());
